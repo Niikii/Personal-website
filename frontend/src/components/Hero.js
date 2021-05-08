@@ -2,14 +2,20 @@ import React, { useEffect, useRef } from "react";
 import { TweenMax, TimelineLite, Power3 } from "gsap";
 import cx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import TextInfoContent from "@mui-treasury/components/content/textInfo";
 import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/blog";
 import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
 import img from "../styles/images/pic2.jpg";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Button,
+  Typography,
+  IconButton,
+} from "@material-ui/core";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
 const useStyles = makeStyles(({ breakpoints, spacing }) => ({
   root: {
@@ -61,11 +67,15 @@ const useStyles = makeStyles(({ breakpoints, spacing }) => ({
     },
   },
   content: {
-    padding: 24,
+    display: "flex",
   },
   cta: {
     marginTop: 24,
     textTransform: "initial",
+  },
+
+  text: {
+    margin: "20px 0",
   },
 }));
 
@@ -78,8 +88,6 @@ const Hero = (props) => {
   let tl = new TimelineLite();
 
   useEffect(() => {
-    // const myImg = images.firstElementchild
-
     TweenMax.to(app, 0, { css: { visibility: "visible" } });
 
     tl.from(images, 1.1, { x: -1280, ease: Power3.easeOut });
@@ -98,6 +106,8 @@ const Hero = (props) => {
   } = useBlogTextInfoContentStyles();
   const shadowStyles = useOverShadowStyles();
 
+  const gitLink = "github.com/Niikii";
+
   return (
     <div
       className="hero"
@@ -111,17 +121,59 @@ const Hero = (props) => {
           image={img}
         />
         <CardContent ref={(el) => (context = el)}>
-          <TextInfoContent
-            classes={contentStyles}
-            heading={"Hi, I'm Niki :)"}
-            // overline={"Web Developer"}
-            body={
-              "Highly motivated developer devoted in creating modern and user-friendly web applications..."
-            }
-          />
-          <Button ref={(el) => (button = el)} className={buttonStyles}>
+          <Typography variant="h5" gutterBottom>
+            Hi, I'm Niki :)
+          </Typography>
+          <Typography className={styles.text} variant="body2" gutterBottom>
+            Highly motivated developer devoted in creating modern and
+            user-friendly web applications...
+          </Typography>
+          <Button ref={(el) => (button = el)} className={buttonStyles} href="#about">
             Read More
           </Button>
+          <div
+            style={{
+              display: "flex",
+              marginTop: "30px",
+            }}
+          >
+            <IconButton
+              style={{
+                width: "40px",
+                height: "40px",
+              }}
+              href="https://github.com/Niikii"
+              target="_blank"
+              aria-label="git"
+            >
+              <GitHubIcon
+                style={{
+                  color: "#fd3838",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                }}
+              />
+            </IconButton>
+            <IconButton
+              style={{
+                width: "40px",
+                height: "40px",
+              }}
+              href="https://www.linkedin.com/in/niki-mortazavi-5486a21bb/"
+              target="_blank"
+              aria-label="linkdin"
+            >
+              <LinkedInIcon
+                style={{
+                  color: "#fd3838",
+                  borderRadius: "50%",
+                  width: "40px",
+                  height: "40px",
+                }}
+              />
+            </IconButton>
+          </div>
         </CardContent>
       </Card>
     </div>
