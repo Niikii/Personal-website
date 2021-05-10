@@ -1,6 +1,3 @@
-import life from "../styles/images/lifeGame.JPG";
-import airbnb from "../styles/images/airbnb.JPG";
-import movies from "../styles/images/movies.JPG";
 import TheatersIcon from "@material-ui/icons/Theaters";
 import RedditIcon from "@material-ui/icons/Reddit";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
@@ -10,7 +7,6 @@ import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 export const projectData = [
   {
     title: "Reddit 2.0",
-    img: "",
     logo: (
       <RedditIcon
         style={{
@@ -27,7 +23,6 @@ export const projectData = [
   },
   {
     title: "Movie App",
-    img: movies,
     logo: (
       <TheatersIcon
         style={{
@@ -44,7 +39,6 @@ export const projectData = [
   },
   {
     title: "Expense Tracker",
-    img: "",
     logo: (
       <MonetizationOnIcon
         style={{
@@ -61,7 +55,6 @@ export const projectData = [
   },
   {
     title: "Game of life",
-    img: life,
     logo: (
       <SportsEsportsIcon
         style={{
@@ -78,7 +71,6 @@ export const projectData = [
   },
   {
     title: "Airbnb",
-    img: airbnb,
     logo: (
       <ExploreIcon
         style={{
