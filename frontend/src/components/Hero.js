@@ -6,6 +6,7 @@ import TextInfoContent from "@mui-treasury/components/content/textInfo";
 import { useBlogTextInfoContentStyles } from "@mui-treasury/styles/textInfoContent/blog";
 import { useOverShadowStyles } from "@mui-treasury/styles/shadow/over";
 import img from "../styles/images/pic2.jpg";
+import { Link, animateScroll as scroll } from "react-scroll";
 import {
   Card,
   CardMedia,
@@ -128,8 +129,21 @@ const Hero = (props) => {
             Highly motivated developer devoted in creating modern and
             user-friendly web applications...
           </Typography>
-          <Button ref={(el) => (button = el)} className={buttonStyles} href="#about">
-            Read More
+          <Button
+            ref={(el) => (button = el)}
+            className={buttonStyles}
+            href="#about"
+          >
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Read More!
+            </Link>
           </Button>
           <div
             style={{
