@@ -18,11 +18,12 @@
   flex: 1;
   font-weight: bold;
   font-size: 18px;
+  color:rgb(100, 32, 165)
 }
 
 .navbar > a:hover {
   text-decoration: none;
-  font-size: 16px;
+  font-size: 19px;
   cursor: pointer;
 }
 
